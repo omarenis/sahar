@@ -1,0 +1,44 @@
+% @Author: Nizar TENZEKHTI
+% @Date:   2019-08-08
+\documentclass[12pt, oneside, a4paper]{enis-pfe-report}
+\graphicspath{{./images/}}
+%% TODO: Remove this function when done %%
+%\newcommand\todoin[2][]{\todo[inline, caption={2do}, #1]{
+%\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Include useful commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Commands}
+\hypersetup{
+  pdftitle={\reportTitle~-~\reportSubject},%
+  pdfauthor={\reportAuthor},%
+  pdfsubject={\reportSubject},%
+  pdfkeywords={report} {internship} {pfe} {enis}
+}
+\dominitoc
+\begin{document}
+    \doublespacing{}% Double spacing between lines
+    \pagenumbering{roman}% i ii iii iv ...
+        \input{chapitre/00-pageGarde}
+    \doublespacing{}
+    \newpage
+    \pagenumbering{arabic}
+    \input{chapitre/02-Remerciement}
+    \renewcommand*\contentsname{\centering \textcolor{cyan}{TABLE DES MATIÈRES}}
+        \addtocontents{toc}{\protect\thispagestyle{MyStyle}}
+    \begin{spacing}{1}
+    \tableofcontents
+    \end{spacing}
+    \addtocontents{lof}{\protect\thispagestyle{MyStyle}}
+    \renewcommand{\listfigurename}{LISTE DES FIGURES}
+    \addto\captionsenglish{
+\renewcommand{\listtablename}{Tables}}
+    \begin{spacing}{1}
+    \end{spacing}
+    \addcontentsline{toc}{chapter}{\listfigurename}
+    \adjustmtc
+    \input{chapitre/04-IntroductionGeneral}
+    \input{chapitre/05-Chapitre1}
+    \input{chapitre/06-Chapitre2}
+\end{document}
